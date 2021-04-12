@@ -17,12 +17,10 @@ public class Person {
         }
 
         if (person.spouse != null) {
-            person.spouse.divorce();
             person.divorce();
         }
 
         if (spouse != null) {
-            spouse.divorce();
             this.divorce();
         }
 
@@ -32,6 +30,7 @@ public class Person {
     }
 
     public void divorce() {
+        spouse.spouse = null;
         spouse = null;
     }
 

@@ -11,6 +11,8 @@ public class Program {
         sortedDiffWords(new Scanner(TextInitializer.initialize()));
 
         countSameWords(new Scanner(TextInitializer.initialize()));
+
+        reverseAllWords(new Scanner(TextInitializer.initialize()));
     }
 
     public static int countDiffWords(Scanner scanner) {
@@ -41,7 +43,16 @@ public class Program {
         for (Map.Entry<String, Integer> e : diffWords.entrySet()) {
             System.out.println(e.getKey() + "= " + e.getValue());
         }
-
     }
+
+    public static void reverseAllWords(Scanner scanner) {
+        Deque<String> wordsList = new ArrayDeque<>();
+        while (scanner.hasNextLine()) wordsList.push(scanner.nextLine());
+
+        while (!wordsList.isEmpty()) {
+            System.out.println(wordsList.poll());
+        }
+    }
+
 
 }

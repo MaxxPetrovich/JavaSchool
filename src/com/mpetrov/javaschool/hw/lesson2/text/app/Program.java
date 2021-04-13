@@ -13,6 +13,8 @@ public class Program {
         countSameWords(new Scanner(TextInitializer.initialize()));
 
         reverseAllWords(new Scanner(TextInitializer.initialize()));
+
+        reverseAllWordsWithIterator(new Scanner(TextInitializer.initialize()));
     }
 
     public static int countDiffWords(Scanner scanner) {
@@ -51,6 +53,15 @@ public class Program {
 
         while (!wordsList.isEmpty()) {
             System.out.println(wordsList.poll());
+        }
+    }
+
+    public static void reverseAllWordsWithIterator(Scanner scanner) {
+        List<String> wordsList = new ArrayList<>();
+        while (scanner.hasNextLine()) wordsList.add(scanner.nextLine());
+        ReverseCollection<String> col = new ReverseCollection<>(wordsList);
+        for (String s : col) {
+            System.out.println(s);
         }
     }
 

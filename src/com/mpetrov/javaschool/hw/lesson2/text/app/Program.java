@@ -9,6 +9,8 @@ public class Program {
         System.out.println(countDiffWords(new Scanner(TextInitializer.initialize())));
 
         sortedDiffWords(new Scanner(TextInitializer.initialize()));
+
+        countSameWords(new Scanner(TextInitializer.initialize()));
     }
 
     public static int countDiffWords(Scanner scanner) {
@@ -27,4 +29,19 @@ public class Program {
             System.out.println(s);
         }
     }
+
+    public static void countSameWords(Scanner scanner) {
+        Map<String, Integer> diffWords = new HashMap<>();
+        while (scanner.hasNextLine()) {
+            String word = scanner.nextLine();
+            if (diffWords.containsKey(word)) {
+                diffWords.put(word, diffWords.get(word) + 1);
+            } else diffWords.put(word, 1);
+        }
+        for (Map.Entry<String, Integer> e : diffWords.entrySet()) {
+            System.out.println(e.getKey() + "= " + e.getValue());
+        }
+
+    }
+
 }

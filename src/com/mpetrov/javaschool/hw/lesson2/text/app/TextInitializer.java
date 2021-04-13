@@ -5,6 +5,7 @@ public class TextInitializer {
         return String.join("\n"
                 , "first"
                 , "first"
+                , "first"
                 , "second"
                 , "third"
                 , "third"
@@ -13,7 +14,12 @@ public class TextInitializer {
                 , "sixth"
                 , "seventh"
                 , "seventh"
+                , "seventh"
+                , "seventh"
+                , "seventh"
                 , "eighth"
+                , "ninth"
+                , "ninth"
                 , "ninth"
                 , "tenth");
     }

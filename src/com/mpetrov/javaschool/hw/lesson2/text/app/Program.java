@@ -15,6 +15,8 @@ public class Program {
         reverseAllWords(new Scanner(TextInitializer.initialize()));
 
         reverseAllWordsWithIterator(new Scanner(TextInitializer.initialize()));
+
+        printArbitraryLine(new Scanner(TextInitializer.initialize()));
     }
 
     public static int countDiffWords(Scanner scanner) {
@@ -65,5 +67,16 @@ public class Program {
         }
     }
 
-
+    public static void printArbitraryLine(Scanner scanner) {
+        List<String> wordsList = new ArrayList<>();
+        while (scanner.hasNextLine()) wordsList.add(scanner.nextLine());
+        System.out.println("Input line number between 0 and " + (wordsList.size() - 1));
+        Scanner lineScanner = new Scanner(System.in);
+        while (true) {
+            int lineNumber = lineScanner.nextInt();
+            if (lineNumber >= 0 && lineNumber < wordsList.size()) {
+                System.out.println(wordsList.get(lineNumber));
+            } else break;
+        }
+    }
 }

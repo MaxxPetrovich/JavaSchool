@@ -46,12 +46,12 @@ public class CollectionUtils {
         return c1.stream().anyMatch(c2::contains);
     }
 
-    public static <T extends Number> List<? extends Number> range(List<? extends Number> list, T min, T max) {
-        return list.stream().filter(e -> e.doubleValue() >= (double)min && e.doubleValue() <= (double)max)
+    public static <T extends Comparable<T>> List<? extends Comparable<T>> range(List<? extends Comparable<T>> list, T min, T max) {
+        return list.stream().filter(e -> e.compareTo(min) >= 0 && e.compareTo(max) <= 0)
                 .collect(Collectors.toList());
     }
 
-    public static <T> List<T> range(List<? extends T> list, T min, T max, Comparator<T> comparator) {
+    public static <T> List<T> range(List<? extends T> list, T min, T max, Comparator<? super T> comparator) {
 
         return list.stream().filter(e -> comparator.compare(e, min) >= 0 && comparator.compare(e, max) <= 0)
                 .collect(Collectors.toList());

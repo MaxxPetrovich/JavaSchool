@@ -5,7 +5,9 @@ public class Program {
         TerminalImpl term = new TerminalImpl();
 
         while(true){
+            System.out.println("Input pin");
             if(term.inputPin()) break;
+            System.out.println("Try again");
         }
         term.putMoney(1000);
         term.getMoney(33);
